@@ -1,0 +1,18 @@
+{
+  "name": "backend-project",
+  "version": "1.0.0",
+  "description": "This is my dummy project where i have built the clone of youtube with a touch of twitter ",
+  "keywords": [
+    "backend",
+    "javascript",
+    "youtube",
+    "fun"
+  ],
+  "license": "ISC",
+  "author": "Pulkit Shukla",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
