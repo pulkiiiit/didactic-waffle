@@ -1,11 +1,9 @@
 import { Router } from "express";
-import { registerUser } from "../controllers/user.controller.js";
+import { loginUser, registerUser, logOutUser, refreshAccessToken } from "../controllers/user.controller.js";
 import {upload} from "../middlewares/multer.middleware.js"
-
-
+import { verifyJwt } from "../middlewares/auth.middleware.js";
 
 const router = Router()
-
 router.route("/register").post(
     upload.fields([
         {
@@ -18,7 +16,16 @@ router.route("/register").post(
     ]
 
     ),
-    registerUser)
+    registerUser
+)
+
+router.route("/login").post(loginUser)
+
+// secured router 
+router.route("/logout").post(verifyJwt, logOutUser)
+
+router.route("refresh-token").post(refreshAccessToken)
+
 
 
 export default router 
